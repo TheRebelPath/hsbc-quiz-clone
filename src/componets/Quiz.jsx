@@ -1,5 +1,7 @@
-import questions from "../data/questions";
 import { useState, useEffect, useRef } from "react";
+
+import questions from "../data/questions";
+import { chronometer } from "../assets";
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -96,7 +98,7 @@ const Quiz = () => {
   return (
     <>
       <div className="flex  justify-end items-center m-auto max-w-[700px] h-[100px]">
-        <img src="./src/assets/timer.png" alt="timer" />
+        <img src={chronometer} alt="timer" />
         <p>
           Tiempo: {formattedSeconds}:{formattedMilliseconds} segundos
         </p>
