@@ -96,7 +96,7 @@ const Quiz = () => {
   return (
     <>
       <div className="flex  justify-end items-center m-auto max-w-[700px] h-[100px]">
-        <img src="src/assets/timer.png" alt="timer" />
+        <img src="./src/assets/timer.png" alt="timer" />
         <p>
           Tiempo: {formattedSeconds}:{formattedMilliseconds} segundos
         </p>
