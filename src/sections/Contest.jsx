@@ -6,7 +6,7 @@ import { promobanner } from "../assets";
 const Contest = () => {
   const [startQuiz, setStartQuiz] = useState(false);
   return (
-    <div>
+    <div className="mt-16 mx-auto h-screen   max-w-[700px] ">
       {!startQuiz ? (
         <div className="flex flex-col relative items-center p-5 sm:h-[390px]">
           <img className="mb-8  h-full" src={promobanner} alt="promo ganar" />

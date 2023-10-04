@@ -6,6 +6,7 @@ import { chronometer } from "../assets";
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [currentAnswer, setCurrentAnswer] = useState(null);
+  const [maxQuestions, setMaxQuestions] = useState(5);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [shuffledQuestions, setShuffledQuestions] = useState(questions);
@@ -81,7 +82,7 @@ const Quiz = () => {
       setCurrentAnswer(null);
     }
     const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < shuffledQuestions.length) {
+    if (nextQuestion < maxQuestions) {
       setCurrentQuestion(nextQuestion);
     } else {
       if (timerIntervalRef.current) {
@@ -99,7 +100,7 @@ const Quiz = () => {
     <>
       <div className="flex  justify-end items-center m-auto max-w-[700px] h-[100px]">
         <img src={chronometer} alt="timer" />
-        <p>
+        <p className="mr-2">
           Tiempo: {formattedSeconds}:{formattedMilliseconds} segundos
         </p>
       </div>
@@ -107,7 +108,7 @@ const Quiz = () => {
         {showScore ? (
           <div>
             <p>
-              Contestaste bien {score} de {shuffledQuestions.length} preguntas
+              Contestaste bien {score} de {maxQuestions} preguntas
             </p>
             <button
               className="text-[20px] bg-red-700 text-white w-full py-[8px] mt-[20px] hover:bg-red-800"
@@ -119,7 +120,7 @@ const Quiz = () => {
         ) : (
           <>
             <div className="flex items-center mb-10">
-              <p className="mx-2 bg-red-700 w-[50px] h-[50px] rounded-full text-center text-white text-[35px]">
+              <p className="mx-2 bg-red-700 min-w-[50px] h-[50px] rounded-full text-center text-white text-[35px]">
                 {currentQuestion + 1}
               </p>
               <p className="text-gray-400">

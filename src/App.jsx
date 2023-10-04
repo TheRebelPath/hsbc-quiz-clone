@@ -6,9 +6,9 @@ function App() {
 
 
   return (
-   <main>
+   <main className="flex  flex-col relative m-auto min-h-[100vh]">
     <Nav/>
-    <section className="m-auto  max-w-[700px] min-h-[100vh]">
+    <section>
       <Contest/>
     </section>
     <section>
